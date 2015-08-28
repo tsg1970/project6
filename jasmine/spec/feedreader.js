@@ -26,7 +26,6 @@ $(function() {
             expect(allFeeds.length).not.toBe(0);
         });
 
-
         /* Write a test that loops through each feed
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
@@ -50,7 +49,6 @@ $(function() {
                 expect(allFeeds[i].name).not.toBeNull();
             }
         });
-
     });
 
     /* Write a new test suite named "The menu" */
@@ -83,7 +81,6 @@ $(function() {
         });
 
     });
-
 
     /* Write a new test suite named "Initial Entries" */
     describe('Initial Entries', function() {
