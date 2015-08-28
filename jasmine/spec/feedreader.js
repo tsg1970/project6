@@ -31,9 +31,10 @@ $(function() {
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
         */
-
+        var feedLength = allFeeds.length;
         it('each feed has a URL defined and the URL is not empty', function() {
-            for (var i = 0; i < allFeeds.length; i++) {
+            //for loop using the array count as an end point
+            for (var i = 0; i < feedLength; i++) {
                 expect(allFeeds[i].url).toBeDefined();
                 expect(allFeeds[i].url).not.toBeNull();
             }
@@ -93,11 +94,11 @@ $(function() {
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
         beforeEach(function(done) {
-            loadFeed(0,done);
+            loadFeed(0, done);
         });
 
         it("has at least 1 .entry in the .feed container", function(done) {
-            var entryCount = $('.entry').length;
+            var entryCount = $('.feed .entry h2').length;
             expect(entryCount).toBeGreaterThan(0);
             done();
         });
@@ -109,20 +110,20 @@ $(function() {
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
-
          var currentFeed;
 
          beforeEach(function(done) {
             loadFeed(0, function() {
-                currentFeed = $('.entry h2').html();
+                currentFeed = $('.feed').html();
+                console.log(currentFeed);
                 done();
             });
         });
 
         it("loadFeed content changes", function(done) {
             loadFeed(1,function() {
-                var newFeed = ($('.entry h2').html());
-                console.log(currentFeed + " & " + newFeed);
+                var newFeed = ($('.feed').html());
+                console.log(newFeed);
                 expect(newFeed).not.toBe(currentFeed);
                 done();
             });
