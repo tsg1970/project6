@@ -1,6 +1,6 @@
 Feed Reader version 1.0 8/28/2015
 
-website: http://tsg1970.github.io/project6/
+website: https://tsg1970.github.io/project6/
 email: tsgoff@att.net
 
 ## To view the tests performed simply open the index.html file. At the bottom of the page will be the Jasmine test results.
